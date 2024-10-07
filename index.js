@@ -1,6 +1,7 @@
 import express from "express";
 import postsRouter from "./routes/posts.js";
 import usersRouter from "./routes/users.js"; // export default
+import commentsRouter from "./routes/comments.js";
 import { error } from "./utils/error.js"; // named export
 
 const app = express();
@@ -57,6 +58,7 @@ app.use("/api", function (req, res, next) {
 // ======= API Routes
 app.use("/api/posts", postsRouter);
 app.use("/api/users", usersRouter);
+app.use("/api/comments", commentsRouter);
 
 // ======== Routes
 app.get("/", (req, res) => {
